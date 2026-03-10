@@ -1,10 +1,7 @@
 {
-  "name": "db",
+  "name": "backend",
   "module": "index.ts",
   "type": "module",
-  "exports": {
-    "./client": "./index.ts"
-  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -12,8 +9,8 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@prisma/adapter-pg": "^7.4.2",
-    "@prisma/client": "^7.4.2",
-    "prisma": "^7.4.2"
+    "db":"*",
+    "@types/express": "^5.0.6",
+    "express": "^5.2.1"
   }
 }
