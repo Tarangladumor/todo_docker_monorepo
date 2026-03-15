@@ -30,8 +30,6 @@ jobs:
       - name: Deploy to VM
         run: |
           echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key
-          mkdir -p /home/runner/.ssh
-          ls /home/runner/.ssh
           chmod 700 /home/runner/ssh_keys
           ssh -o StrictHostKeyChecking=no -i ~/ssh_key root@13.60.246.218 -t "docker stop user_backend && docker run --name user_backend -d -p 8080:8080 tarang2607/todo-app-backend:${{ github.sha }}"
 
